@@ -36,6 +36,7 @@ with body:
       st.write("The final deep learning model which drives this web application can be found here: https://colab.research.google.com/drive/1a-zdcBqSWqbm6PsiDoYC_8MyXTC6vmhS?usp=sharing. The final model was developed after extensive experimentation.")
 
     loaded_model = tf.keras.models.load_model("pizza_steak.h5")
+    st.subheader("Upload a picture of a Pizza or Steak to make a prediction 🧠")
     uploaded_file = st.file_uploader(label="Choose a file", type=['png','jpg','jpeg'])
     if uploaded_file is not None:
         # Convert the file to an opencv image.
