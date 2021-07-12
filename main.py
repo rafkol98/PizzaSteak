@@ -37,7 +37,7 @@ with body:
 
     loaded_model = tf.keras.models.load_model("pizza_steak.h5")
     st.subheader("Upload a picture of a Pizza or Steak to make a prediction 🧠")
-    uploaded_file = st.file_uploader(label="Choose a file", type=['png','jpg','jpeg'])
+    uploaded_file = st.file_uploader(label="Choose an image", type=['png','jpg','jpeg'])
     if uploaded_file is not None:
         # Convert the file to an opencv image.
         file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
@@ -54,3 +54,6 @@ with body:
         label = "Mamma mia! that looks like a delicious Pizza 🍕" if pred <= 0.5 else "That looks like a juicy Steak 🥩, maybe try it with Jack Daniels sauce?" 
 
         st.subheader(label)
+
+    
+    st.write("🧑🏻‍💻 Rafael Kollyfas - 2021")
