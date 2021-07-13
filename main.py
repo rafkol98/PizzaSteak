@@ -31,10 +31,8 @@ with header:
     st.title('🍕Pizza or 🥩Steak')
     st.write('This is an application I quickly developed to test and deploy a Convolutional Neural Network model I created which classifies images between my two different foods, Pizza and Steak!')
 with body:
-    display = st.checkbox('CNN model code')
-    if display:
-      st.write("The final deep learning model which drives this web application can be found here: https://colab.research.google.com/drive/1a-zdcBqSWqbm6PsiDoYC_8MyXTC6vmhS?usp=sharing. The final model was developed after extensive experimentation.")
-
+    
+    
     loaded_model = tf.keras.models.load_model("pizza_steak.h5")
     st.subheader("Upload a picture of a Pizza or Steak to make a prediction 🧠")
     uploaded_file = st.file_uploader(label="Choose an image", type=['png','jpg','jpeg'])
@@ -54,6 +52,9 @@ with body:
         label = "Mamma mia! that looks like a delicious Pizza 🍕" if pred <= 0.5 else "That looks like a juicy Steak 🥩, maybe try it with Jack Daniels sauce?" 
 
         st.subheader(label)
-
     
+    display = st.checkbox('CNN model code')
+    if display:
+      st.write("The final deep learning model which was developed after extensive experimentation can be found here: https://colab.research.google.com/drive/1a-zdcBqSWqbm6PsiDoYC_8MyXTC6vmhS?usp=sharing.")
+
     st.write("🧑🏻‍💻 Rafael Kollyfas - 2021")
