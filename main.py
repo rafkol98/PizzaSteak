@@ -8,6 +8,14 @@ import numpy as np
 header = st.beta_container()
 body = st.beta_container()
 
+# Hide hamburger menu and footer.
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 # Create a function to import an image and resize it to be able to be used with our model
 def load_and_prep_image(img, img_shape=224):
